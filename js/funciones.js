@@ -89,3 +89,17 @@ class AMD extends Microprocesador {
 		this.fabricante = 'AMD';
 	};
 };
+
+const síNo = (booleano) => {
+	return booleano ? 'Sí' : 'No';
+},
+procesador1 = new Intel ('Core', '9900k', 8, 16, 3.6, 95),
+procesador2 = new Intel ('Core', '3570', 4, 4, 3.4, 77),
+procesador3 = new AMD ('Ryzen 9', '3900X', 12, 24, 3.8, 105);
+
+console.info (procesador1.resumen());
+console.info (procesador2.resumen());
+console.info (procesador3.resumen());
+console.info (`¿Tiene el procesador ${procesador1.modelo} Hyper-Threading?`,síNo(procesador1.esHyperThreading()));
+console.info (`¿Es el procesador ${procesador1.modelo} del tipo bloqueado?`,síNo(procesador1.esBloqueado()));
+console.info (`¿Y el procesador ${procesador2.modelo}?`,síNo(procesador2.esBloqueado()));
