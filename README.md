@@ -1,2 +1,2 @@
-# Plantilla HTML
-Plantilla genérica
+# Práctica 10
+Clases y Herencias
