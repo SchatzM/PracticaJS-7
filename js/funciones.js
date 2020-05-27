@@ -32,7 +32,7 @@ class Microprocesador {
 	};
 };
 
-// Primera clase hija
+// Primera clase hija que hereda de la clase padre
 class Intel extends Microprocesador {
 	constructor (
 		família = 'Desconocido',
@@ -62,5 +62,30 @@ class Intel extends Microprocesador {
 
 	esBloqueado () {
 		return !this.modelo.includes('k'); // Si el modelo contiene una K en su nombre es que es un procesador desbloqueado (permite mayor control sobre su configuración)
+	};
+};
+
+// Segunda clase hija que hereda de la clase padre
+class AMD extends Microprocesador {
+	constructor (
+		família = 'Desconocida',
+		modelo = 'Sin nombre',
+		númeroNúcleos = 0,
+		númeroHilos = 0,
+		velocidadBase = 0,
+		TDP = 0,
+		fabricante
+	) {
+		super (
+			fabricante,
+			númeroNúcleos,
+			númeroHilos,
+			velocidadBase,
+			TDP
+		);
+
+		this.família = família;
+		this.modelo = modelo;
+		this.fabricante = 'AMD';
 	};
 };
