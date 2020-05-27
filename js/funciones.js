@@ -90,12 +90,12 @@ class AMD extends Microprocesador {
 	};
 };
 
-const síNo = (booleano) => {
-	return booleano ? 'Sí' : 'No';
-},
-procesador1 = new Intel ('Core', '9900k', 8, 16, 3.6, 95),
-procesador2 = new Intel ('Core', '3570', 4, 4, 3.4, 77),
-procesador3 = new AMD ('Ryzen 9', '3900X', 12, 24, 3.8, 105);
+const	síNo = (booleano) => {
+			return booleano ? 'Sí' : 'No'; // Devulve sí o no según el booleano dado
+		},
+		procesador1 = new Intel ('Core', '9900k', 8, 16, 3.6, 95),
+		procesador2 = new Intel ('Core', '3570', 4, 4, 3.4, 77),
+		procesador3 = new AMD ('Ryzen 9', '3900X', 12, 24, 3.8, 105);
 
 console.info (procesador1.resumen());
 console.info (procesador2.resumen());
