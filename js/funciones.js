@@ -5,7 +5,7 @@
  * Brian Passos
  */
 
- // Clase principal
+ // Clase principal (Padre)
 class Microprocesador {
 	constructor (
 		fabricante = 'Desconocido',
@@ -29,5 +29,38 @@ class Microprocesador {
 				`Cantidad de hilos:\t\t\t\t${this.númeroHilos}\n`+
 				`Frecuencia base del procesador:\t${this.velocidadBase} GHz\n`+
 				`TDP:\t\t\t\t\t\t\t${this.TDP} W\n\n`;
+	};
+};
+
+// Primera clase hija
+class Intel extends Microprocesador {
+	constructor (
+		família = 'Desconocido',
+		modelo = 'Sin nombre',
+		númeroNúcleos = 0,
+		númeroHilos = 0,
+		velocidadBase = 0,
+		TDP = 0,
+		fabricante
+	) {
+		super (
+			fabricante,
+			númeroNúcleos,
+			númeroHilos,
+			velocidadBase,
+			TDP
+		);
+
+		this.fabricante = 'Intel';
+		this.família = família;
+		this.modelo = modelo;
+	};
+
+	esHyperThreading () {
+		return this.númeroHilos / this.númeroNúcleos == 2; // Dependiendo del resultado se considerea si posee la tecnología Hyper-Threading (dos hilos por núcleo)
+	};
+
+	esBloqueado () {
+		return !this.modelo.includes('k'); // Si el modelo contiene una K en su nombre es que es un procesador desbloqueado (permite mayor control sobre su configuración)
 	};
 };
