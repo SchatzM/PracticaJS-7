@@ -88,6 +88,12 @@ class AMD extends Microprocesador {
 		this.modelo = modelo;
 		this.fabricante = 'AMD';
 	};
+
+	esBloqueado () {
+		return !this.família.toLowerCase().includes('ryzen'); // Si el modelo es de la família 'Ryzen', es un procesador desbloqueado (permite mayor control sobre su configuración)
+	};
+
+
 };
 
 const	síNo = (booleano) => {
